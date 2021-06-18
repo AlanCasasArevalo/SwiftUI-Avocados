@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  Avocados
-//
-//  Created by Alan Casas on 18/6/21.
-//
-
 import SwiftUI
 
 struct ContentView: View {
