@@ -16,6 +16,7 @@
 		51CB2C84267D0D33006523BE /* RecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CB2C83267D0D33006523BE /* RecipesView.swift */; };
 		51CB2C86267D0D47006523BE /* RipeningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CB2C85267D0D47006523BE /* RipeningView.swift */; };
 		51CB2C88267D0D52006523BE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CB2C87267D0D52006523BE /* SettingsView.swift */; };
+		51CB2C8B267D238F006523BE /* HeaderRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CB2C8A267D238F006523BE /* HeaderRecipeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		51CB2C83267D0D33006523BE /* RecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesView.swift; sourceTree = "<group>"; };
 		51CB2C85267D0D47006523BE /* RipeningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RipeningView.swift; sourceTree = "<group>"; };
 		51CB2C87267D0D52006523BE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		51CB2C8A267D238F006523BE /* HeaderRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderRecipeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				51CB2C83267D0D33006523BE /* RecipesView.swift */,
 				51CB2C85267D0D47006523BE /* RipeningView.swift */,
 				51CB2C87267D0D52006523BE /* SettingsView.swift */,
+				51CB2C8A267D238F006523BE /* HeaderRecipeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 				51CB2C86267D0D47006523BE /* RipeningView.swift in Sources */,
 				51CB2C88267D0D52006523BE /* SettingsView.swift in Sources */,
 				51CB2C84267D0D33006523BE /* RecipesView.swift in Sources */,
+				51CB2C8B267D238F006523BE /* HeaderRecipeView.swift in Sources */,
 				51CB2C82267D0D26006523BE /* AvocadosView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
