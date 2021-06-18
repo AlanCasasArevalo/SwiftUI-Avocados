@@ -11,6 +11,11 @@
 		51CB2C73267C5D69006523BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CB2C72267C5D69006523BE /* ContentView.swift */; };
 		51CB2C75267C5D6C006523BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51CB2C74267C5D6C006523BE /* Assets.xcassets */; };
 		51CB2C78267C5D6C006523BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51CB2C77267C5D6C006523BE /* Preview Assets.xcassets */; };
+		51CB2C80267C640E006523BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51CB2C7F267C640E006523BE /* LaunchScreen.storyboard */; };
+		51CB2C82267D0D26006523BE /* AvocadosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CB2C81267D0D26006523BE /* AvocadosView.swift */; };
+		51CB2C84267D0D33006523BE /* RecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CB2C83267D0D33006523BE /* RecipesView.swift */; };
+		51CB2C86267D0D47006523BE /* RipeningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CB2C85267D0D47006523BE /* RipeningView.swift */; };
+		51CB2C88267D0D52006523BE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CB2C87267D0D52006523BE /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +25,11 @@
 		51CB2C74267C5D6C006523BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		51CB2C77267C5D6C006523BE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		51CB2C79267C5D6C006523BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51CB2C7F267C640E006523BE /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		51CB2C81267D0D26006523BE /* AvocadosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvocadosView.swift; sourceTree = "<group>"; };
+		51CB2C83267D0D33006523BE /* RecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesView.swift; sourceTree = "<group>"; };
+		51CB2C85267D0D47006523BE /* RipeningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RipeningView.swift; sourceTree = "<group>"; };
+		51CB2C87267D0D52006523BE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,9 +63,10 @@
 			isa = PBXGroup;
 			children = (
 				51CB2C70267C5D69006523BE /* AvocadosApp.swift */,
-				51CB2C72267C5D69006523BE /* ContentView.swift */,
+				51CB2C89267D0D59006523BE /* View */,
 				51CB2C74267C5D6C006523BE /* Assets.xcassets */,
 				51CB2C79267C5D6C006523BE /* Info.plist */,
+				51CB2C7F267C640E006523BE /* LaunchScreen.storyboard */,
 				51CB2C76267C5D6C006523BE /* Preview Content */,
 			);
 			path = Avocados;
@@ -67,6 +78,18 @@
 				51CB2C77267C5D6C006523BE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		51CB2C89267D0D59006523BE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				51CB2C72267C5D69006523BE /* ContentView.swift */,
+				51CB2C81267D0D26006523BE /* AvocadosView.swift */,
+				51CB2C83267D0D33006523BE /* RecipesView.swift */,
+				51CB2C85267D0D47006523BE /* RipeningView.swift */,
+				51CB2C87267D0D52006523BE /* SettingsView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +149,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51CB2C80267C640E006523BE /* LaunchScreen.storyboard in Resources */,
 				51CB2C78267C5D6C006523BE /* Preview Assets.xcassets in Resources */,
 				51CB2C75267C5D6C006523BE /* Assets.xcassets in Resources */,
 			);
@@ -140,6 +164,10 @@
 			files = (
 				51CB2C73267C5D69006523BE /* ContentView.swift in Sources */,
 				51CB2C71267C5D69006523BE /* AvocadosApp.swift in Sources */,
+				51CB2C86267D0D47006523BE /* RipeningView.swift in Sources */,
+				51CB2C88267D0D52006523BE /* SettingsView.swift in Sources */,
+				51CB2C84267D0D33006523BE /* RecipesView.swift in Sources */,
+				51CB2C82267D0D26006523BE /* AvocadosView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
