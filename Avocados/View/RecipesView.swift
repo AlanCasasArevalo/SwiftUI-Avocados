@@ -12,18 +12,23 @@ struct RecipesView: View {
                     HStack (alignment: .top, spacing: 0) {
                         ForEach(headers, id: \.id) { header in
                             HeaderRecipeView(header: header)
-
                         }
                     }
                 }
+                
+                // MARK: - Body
+                Text("Avocados")
+                    .fontWeight(.bold)
+                    .modifier(TitleModifier())
+
+                DishesView()
+                    .frame(maxWidth: 640)
 
                 // MARK: - Footer
                 VStack {
                     Text("All about avocados")
-                        .font(.system(.title, design: .serif))
                         .fontWeight(.bold)
-                        .padding(8)
-                        .foregroundColor(Color("ColorGreenAdaptative"))
+                        .modifier(TitleModifier())
 
                     Text("All about avocados, All about avocados, All about avocados, All about avocados, All about avocados, ")
                         .font(.system(.body, design: .serif))
@@ -38,6 +43,15 @@ struct RecipesView: View {
         } // ScrollView
         .edgesIgnoringSafeArea(.all)
         .padding(0)
+    }
+}
+
+struct TitleModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.system(.title, design: .serif))
+            .padding(8)
+            .foregroundColor(Color("ColorGreenAdaptative"))
     }
 }
 
