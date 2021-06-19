@@ -5,7 +5,8 @@ struct ContentView: View {
     let headers: [HeaderModel]
     let recipes: [RecipeModel]
     let facts: [FactModel]
-    
+    let ripenings: [RipeningModel]
+
     var body: some View {
         TabView {
             AvocadosView()
@@ -25,7 +26,7 @@ struct ContentView: View {
                             .padding()
                     }
                 }
-            RipeningView(recipe: recipes[0])
+            RipeningStageView()
                 .tabItem {
                     VStack{
                         Image("tabicon-avocado")
@@ -49,13 +50,13 @@ struct ContentView: View {
 
 class ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(headers: headersData, recipes: recipesData, facts: factsData)
+        ContentView(headers: headersData, recipes: recipesData, facts: factsData, ripenings: ripeningsData)
     }
 
     #if DEBUG
     @objc class func injected() {
         UIApplication.shared.windows.first?.rootViewController =
-            UIHostingController(rootView: ContentView(headers: headersData, recipes: recipesData, facts: factsData))
+            UIHostingController(rootView: ContentView(headers: headersData, recipes: recipesData, facts: factsData, ripenings: ripeningsData))
     }
     #endif
 }

@@ -47,7 +47,7 @@ struct RecipeCardView: View {
                 CookingView(recipe: recipe)
             }
             .padding()
-        }
+        } // VStack
         .background(Color.white)
         .cornerRadius(12)
         .shadow(color: Color("ColorBlackTransparentLight"), radius: 8, x: 0, y: 0)

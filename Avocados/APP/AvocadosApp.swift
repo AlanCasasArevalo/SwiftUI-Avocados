@@ -20,9 +20,10 @@ struct AvocadosApp: App {
         let headers = headersData
         let recipes = recipesData
         let facts = factsData
+        let ripenings = ripeningsData
 
         WindowGroup {
-            ContentView(headers: headers, recipes: recipes, facts: facts)
+            ContentView(headers: headers, recipes: recipes, facts: facts, ripenings: ripenings)
         }
     }
 }
