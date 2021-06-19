@@ -26,7 +26,7 @@ struct ContentView: View {
                             .padding()
                     }
                 }
-            RipeningStageView()
+            RipeningStageView(ripenings: ripenings)
                 .tabItem {
                     VStack{
                         Image("tabicon-avocado")
