@@ -18,9 +18,11 @@ struct AvocadosApp: App {
     var body: some Scene {
         
         let headers = headersData
-        
+        let recipes = recipesData
+        let facts = factsData
+
         WindowGroup {
-            ContentView(headers: headers)
+            ContentView(headers: headers, recipes: recipes, facts: facts)
         }
     }
 }

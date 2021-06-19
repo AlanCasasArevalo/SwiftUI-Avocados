@@ -3,6 +3,8 @@ import SwiftUI
 struct ContentView: View {
     
     let headers: [HeaderModel]
+    let recipes: [RecipeModel]
+    let facts: [FactModel]
     
     var body: some View {
         TabView {
@@ -15,7 +17,7 @@ struct ContentView: View {
                     }
                 }
 
-            RecipesView(headers: headers)
+            RecipesView(headers: headers, facts: facts)
                 .tabItem {
                     VStack{
                         Image("tabicon-book")
@@ -23,7 +25,7 @@ struct ContentView: View {
                             .padding()
                     }
                 }
-            RipeningView()
+            RipeningView(recipe: recipes[0])
                 .tabItem {
                     VStack{
                         Image("tabicon-avocado")
@@ -47,13 +49,13 @@ struct ContentView: View {
 
 class ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(headers: headersData)
+        ContentView(headers: headersData, recipes: recipesData, facts: factsData)
     }
 
     #if DEBUG
     @objc class func injected() {
         UIApplication.shared.windows.first?.rootViewController =
-                UIHostingController(rootView: ContentView(headers: headersData))
+            UIHostingController(rootView: ContentView(headers: headersData, recipes: recipesData, facts: factsData))
     }
     #endif
 }

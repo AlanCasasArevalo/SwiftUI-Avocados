@@ -3,6 +3,7 @@ import SwiftUI
 struct RecipesView: View {
     
     let headers: [HeaderModel]
+    let facts: [FactModel]
 
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
@@ -16,13 +17,30 @@ struct RecipesView: View {
                     }
                 }
                 
-                // MARK: - Body
-                Text("Avocados")
+                // MARK: - Dishes
+                Text("Avocados Dishes")
                     .fontWeight(.bold)
                     .modifier(TitleModifier())
 
                 DishesView()
                     .frame(maxWidth: 640)
+                
+                // MARK: - Facts
+                Text("Avocados Facts")
+                    .fontWeight(.bold)
+                    .modifier(TitleModifier())
+
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack (alignment: .top, spacing: 60) {
+                        ForEach(facts, id: \.id) { fact in
+                            FactCardView(fact: fact)
+                        }
+                    } // HStack
+                    .padding(.vertical)
+                    .padding(.leading, 60)
+                    .padding(.trailing, 20)
+                } //ScrollView
+
 
                 // MARK: - Footer
                 VStack {
@@ -57,6 +75,6 @@ struct TitleModifier: ViewModifier {
 
 struct RecipesView_Previews: PreviewProvider {
     static var previews: some View {
-        RecipesView(headers: headersData)
+        RecipesView(headers: headersData, facts: factsData)
     }
 }
