@@ -4,6 +4,7 @@ struct RecipesView: View {
     
     let headers: [HeaderModel]
     let facts: [FactModel]
+    let recipes: [RecipeModel]
 
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
@@ -41,7 +42,20 @@ struct RecipesView: View {
                     .padding(.trailing, 20)
                 } //ScrollView
 
-
+                
+                // MARK: - Recipes
+                Text("Avocados Recipes")
+                    .fontWeight(.bold)
+                    .modifier(TitleModifier())
+                
+                VStack (alignment: .center, spacing: 20) {
+                    ForEach(recipes, id: \.id) { recipe in
+                        RecipeCardView(recipe: recipe)
+                    }
+                } // HStack
+                .frame(maxWidth: 640)
+                .padding(.horizontal)
+                
                 // MARK: - Footer
                 VStack {
                     Text("All about avocados")
@@ -75,6 +89,6 @@ struct TitleModifier: ViewModifier {
 
 struct RecipesView_Previews: PreviewProvider {
     static var previews: some View {
-        RecipesView(headers: headersData, facts: factsData)
+        RecipesView(headers: headersData, facts: factsData, recipes: recipesData)
     }
 }

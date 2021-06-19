@@ -17,7 +17,7 @@ struct ContentView: View {
                     }
                 }
 
-            RecipesView(headers: headers, facts: facts)
+            RecipesView(headers: headers, facts: facts, recipes: recipes)
                 .tabItem {
                     VStack{
                         Image("tabicon-book")

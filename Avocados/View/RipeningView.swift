@@ -1,13 +1,31 @@
 import SwiftUI
 
 struct RipeningView: View {
+    
+    let recipe: RecipeModel
+
     var body: some View {
-        Text("RipeningView")
+        VStack {
+            Text("Avocado Facts")
+                .fontWeight(.bold)
+                .modifier(TitleModifier())
+            
+            Text("Avocado Recipes")
+                .fontWeight(.bold)
+                .modifier(TitleModifier())
+            
+            RecipeCardView(recipe: recipe)
+                .padding()
+            
+            Spacer()
+        }
+        
+        
     }
 }
 
 struct RipeningView_Previews: PreviewProvider {
     static var previews: some View {
-        RipeningView()
+        RipeningView(recipe: recipesData[0])
     }
 }
