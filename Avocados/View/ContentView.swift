@@ -1,6 +1,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    let headers: [HeaderModel]
+    
     var body: some View {
         TabView {
             AvocadosView()
@@ -12,7 +15,7 @@ struct ContentView: View {
                     }
                 }
 
-            RecipesView()
+            RecipesView(headers: headers)
                 .tabItem {
                     VStack{
                         Image("tabicon-book")
@@ -42,8 +45,15 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+class ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(headers: headersData)
     }
+
+    #if DEBUG
+    @objc class func injected() {
+        UIApplication.shared.windows.first?.rootViewController =
+                UIHostingController(rootView: ContentView(headers: headersData))
+    }
+    #endif
 }

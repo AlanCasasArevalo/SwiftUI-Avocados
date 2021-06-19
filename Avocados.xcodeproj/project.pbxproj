@@ -17,6 +17,8 @@
 		51CB2C86267D0D47006523BE /* RipeningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CB2C85267D0D47006523BE /* RipeningView.swift */; };
 		51CB2C88267D0D52006523BE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CB2C87267D0D52006523BE /* SettingsView.swift */; };
 		51CB2C8B267D238F006523BE /* HeaderRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CB2C8A267D238F006523BE /* HeaderRecipeView.swift */; };
+		CD7F73F8953F9E74B965EB6F /* HeaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7F7FC01280E6CD5FE522C9 /* HeaderModel.swift */; };
+		CD7F7608D69DF0A009A65C0F /* HeaderData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7F741034D639E73EF288F5 /* HeaderData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		51CB2C85267D0D47006523BE /* RipeningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RipeningView.swift; sourceTree = "<group>"; };
 		51CB2C87267D0D52006523BE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		51CB2C8A267D238F006523BE /* HeaderRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderRecipeView.swift; sourceTree = "<group>"; };
+		CD7F741034D639E73EF288F5 /* HeaderData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderData.swift; sourceTree = "<group>"; };
+		CD7F7FC01280E6CD5FE522C9 /* HeaderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,8 @@
 				51CB2C79267C5D6C006523BE /* Info.plist */,
 				51CB2C7F267C640E006523BE /* LaunchScreen.storyboard */,
 				51CB2C76267C5D6C006523BE /* Preview Content */,
+				CD7F7FC01280E6CD5FE522C9 /* HeaderModel.swift */,
+				CD7F741034D639E73EF288F5 /* HeaderData.swift */,
 			);
 			path = Avocados;
 			sourceTree = "<group>";
@@ -172,6 +178,8 @@
 				51CB2C84267D0D33006523BE /* RecipesView.swift in Sources */,
 				51CB2C8B267D238F006523BE /* HeaderRecipeView.swift in Sources */,
 				51CB2C82267D0D26006523BE /* AvocadosView.swift in Sources */,
+				CD7F73F8953F9E74B965EB6F /* HeaderModel.swift in Sources */,
+				CD7F7608D69DF0A009A65C0F /* HeaderData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +221,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -233,6 +242,14 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-Xlinker",
+					"-interposable",
+					"-Xlinker",
+					"-undefined",
+					"-Xlinker",
+					dynamic_lookup,
+				);
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -301,12 +318,17 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Avocados/Preview Content\"";
+				ENABLE_BITCODE = NO;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Avocados/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"-Xlinker",
+					"-interposable",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alancasasarevalo-gmail.Avocados";
 				PRODUCT_NAME = "$(TARGET_NAME)";

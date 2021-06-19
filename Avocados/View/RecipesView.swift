@@ -1,13 +1,19 @@
 import SwiftUI
 
 struct RecipesView: View {
+    
+    let headers: [HeaderModel]
+
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack (alignment: .center, spacing: 20) {
                 // MARK: - Header
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack (alignment: .top, spacing: 0) {
-                        HeaderRecipeView()
+                        ForEach(headers, id: \.id) { header in
+                            HeaderRecipeView(header: header)
+
+                        }
                     }
                 }
 
@@ -37,6 +43,6 @@ struct RecipesView: View {
 
 struct RecipesView_Previews: PreviewProvider {
     static var previews: some View {
-        RecipesView()
+        RecipesView(headers: headersData)
     }
 }
