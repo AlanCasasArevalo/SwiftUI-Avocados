@@ -3,6 +3,8 @@ import SwiftUI
 struct RecipeCardView: View {
     
     let recipe: RecipeModel
+    var haptic = UIImpactFeedbackGenerator()
+    @State var isPresented = false
     
     var body: some View {
         VStack (alignment: .leading, spacing: 0) {
@@ -40,42 +42,22 @@ struct RecipeCardView: View {
                     .italic()
                 
                 // MARK: - Rating
-                HStack {
-                    ForEach(1...(recipe.rating), id:\.self) { _ in
-                        Image(systemName: "star.fill")
-                            .font(.system(.body, design: .serif))
-                    }
-                }
-                .foregroundColor(.yellow)
+                RatingView(recipe: recipe)
                 
-                // MARK: - Cooking
-                HStack (alignment: .center, spacing: 12) {
-                    
-                    HStack {
-                        Image(systemName: "person.2")
-                        Text("Servers: \(recipe.serves)")
-                    }
-                    
-                    HStack {
-                        Image(systemName: "timer")
-                        Text("Prep: \(recipe.preparation)")
-                    }
-                    
-                    HStack {
-                        Image(systemName: "flame")
-                        Text("Cooking: \(recipe.cooking)")
-                    }
-                    
-                }
-                .font(.footnote)
-                .foregroundColor(.gray)
+                CookingView(recipe: recipe)
             }
             .padding()
         }
         .background(Color.white)
         .cornerRadius(12)
         .shadow(color: Color("ColorBlackTransparentLight"), radius: 8, x: 0, y: 0)
-        
+        .onTapGesture {
+            haptic.impactOccurred()
+            isPresented.toggle()
+        }
+        .sheet(isPresented: $isPresented, content: {
+            RecipesDetailView(recipe: recipe)
+        })
     }
 }
 

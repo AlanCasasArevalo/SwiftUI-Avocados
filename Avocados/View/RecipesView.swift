@@ -42,7 +42,6 @@ struct RecipesView: View {
                     .padding(.trailing, 20)
                 } //ScrollView
 
-                
                 // MARK: - Recipes
                 Text("Avocados Recipes")
                     .fontWeight(.bold)
